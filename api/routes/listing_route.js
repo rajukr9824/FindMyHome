@@ -1,11 +1,19 @@
-import express from 'express';
-import { createListing, deleteListing, updateListing, getListing, getListings } from '../controllers/listing_controller.js';
-import { verifyToken } from '../utils/verifyUser.js';
+const express = require('express');
+const {
+  createListing,
+  deleteListing,
+  updateListing,
+  getListing,
+  getListings
+} = require('../controllers/listing_controller');
+const { verifyToken } = require('../utils/verifyUser');
+
 const router = express.Router();
 
 router.post('/create', verifyToken, createListing);
-router.delete('/delete/:id', verifyToken, deleteListing)
-router.post('/update/:id', verifyToken, updateListing)
-router.get('/get/:id', getListing)
-router.get('/get', getListings)
-export default router;
+router.delete('/delete/:id', verifyToken, deleteListing);
+router.post('/update/:id', verifyToken, updateListing);
+router.get('/get/:id', getListing);
+router.get('/get', getListings);
+
+module.exports = router;
