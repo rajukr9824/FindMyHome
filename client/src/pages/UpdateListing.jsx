@@ -146,10 +146,10 @@ export default function UpdateListing() {
                             <p>Baths</p>
                         </div>
                         <div className='flex items-center gap-2'>
-                            <input type="number" id='regularPrice' min='1000' max='30000' required className='p-3 border rounded-lg w-full' onChange={handleChange} value={formData.regularPrice}/>
+                            <input type="number" id='regularPrice' min='1000' max='300000000' required className='p-3 border rounded-lg w-full' onChange={handleChange} value={formData.regularPrice}/>
                             <div className='flex flex-col items-center'>
                                 <p>Regular price</p>
-                                <span className='text-xs'>₹ / month</span>
+                                <span className='text-xs'>₹ {formData.type === 'rent' && '/ month'}</span>
                             </div>
                         </div>
                         {formData.offer && (
@@ -157,7 +157,7 @@ export default function UpdateListing() {
                             <input type="number" id='discountPrice' min='0' required className='p-3 border rounded-lg w-full' onChange={handleChange} value={formData.discountPrice}/>
                             <div className='flex flex-col items-center'>
                                 <p>Discounted price</p>
-                                <span className='text-xs'>₹ / month</span>
+                                <span className='text-xs'>₹ {formData.type === 'rent' && '/ month'}</span>
                             </div>
                         </div>
                         )}
