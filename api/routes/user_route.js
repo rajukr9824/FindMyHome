@@ -3,7 +3,10 @@ const {
   deleteUser,
   updateUser,
   getUserListing,
-  getUser
+  getUser,
+  addToFavourites,
+  removeFromFavourites,
+  getFavourites
 } = require('../controllers/user_controller');
 const { verifyToken } = require('../utils/verifyUser');
 
@@ -13,5 +16,7 @@ router.post('/update/:id', verifyToken, updateUser);
 router.delete('/delete/:id', verifyToken, deleteUser);
 router.get('/listing/:id', verifyToken, getUserListing);
 router.get('/:id', verifyToken, getUser);
+
+
 
 module.exports = router;

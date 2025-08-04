@@ -19,6 +19,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png",
     },
+   
+
 }, { timestamps: true });
 
 const User = mongoose.model("User", userSchema);
